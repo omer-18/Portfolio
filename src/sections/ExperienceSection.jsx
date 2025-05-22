@@ -49,7 +49,7 @@ const Experience = () => {
             // and end it when the timeline is at 70% down the screen
             scrollTrigger: {
                 trigger: ".timeline",
-                start: "-10% center",
+                start: "top center",
                 end: "70% center",
                 // Update the animation as the user scrolls
                 onUpdate: (self) => {

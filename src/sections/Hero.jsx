@@ -62,7 +62,7 @@ const Hero = () => {
               <p className="text-white-50 md:text-lg relative z-10 pointer-events-none">
                 Hi, I’m Omer, an Engineer based in Canada with a passion for
               </p>
-              <p className="text-white-50 md:text-lg relative z-10 pointer-events-none">
+              <p className="text-white-50 md:text-lg relative z-10 pointer-events-none -mt-5">
                 Software, Firmware, Hardware and Design :).
               </p>
 
