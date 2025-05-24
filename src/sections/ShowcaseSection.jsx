@@ -67,7 +67,9 @@ const ShowcaseSection = () => {
                             <div className="image-wrapper bg-[#ffefdb]">
                                 <img src="/images/project2.png" alt="Amazon Interface" />
                             </div>
-                            <h2> Amazon Interface Clone </h2>
+                            <a href = "https://github.com/omer-18/Amazon-Interface-Clone" target = "_blank">
+                                <h2> Amazon Interface Clone </h2>
+                            </a>
                         </div>
                         <div className="project" ref = {project3Ref}>
                             <div className="image-wrapper bg-[#ffe7eb]">
