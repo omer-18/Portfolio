@@ -52,8 +52,10 @@ const ShowcaseSection = () => {
                             </a>
                         </div>
                         <div className="text-content">
-                            <h2>CLIF: Man's next best friend.
-                                A device that translates sign language to speech in real time.</h2>
+                            <a href= "https://github.com/omer-18/CLIF" target = "_blank">
+                                <h2>CLIF: Man's next best friend.
+                                    A device that translates sign language to speech in real time.</h2>
+                            </a>
                             <p className="text-white-50 md:text-xl">
                                 Built with Arduino, TensorFlow, Pytorch, OpenCV and Python
                                 for a fast, user friendly experience.
@@ -65,11 +67,13 @@ const ShowcaseSection = () => {
                     <div className="project-list-wrapper overflow-hidden">
                         <div className="project" ref = {project2Ref}>
                             <div className="image-wrapper bg-[#ffefdb]">
-                                <img src="/images/project2.png" alt="Amazon Interface" />
+                                <a href = "https://github.com/omer-18/Amazon-Interface-Clone" target = "_blank">
+                                    <img src="/images/project2.png" alt="Amazon Interface" />
+                                </a>
                             </div>
-                            <a href = "https://github.com/omer-18/Amazon-Interface-Clone" target = "_blank">
-                                <h2> Amazon Interface Clone </h2>
-                            </a>
+                                <a href = "https://github.com/omer-18/Amazon-Interface-Clone" target = "_blank">
+                                    <h2> Amazon Interface Clone </h2>
+                                </a>
                         </div>
                         <div className="project" ref = {project3Ref}>
                             <div className="image-wrapper bg-[#ffe7eb]">
@@ -77,7 +81,9 @@ const ShowcaseSection = () => {
                                     <img src="/images/project3.png" alt="PID" />
                                 </a>
                             </div>
-                            <h2> PID Controller: Auto-Balancer </h2>
+                            <a href= "https://github.com/omer-18/PID-Controller" target = "_blank">
+                                <h2> PID Controller: Auto-Balancer </h2>
+                            </a>
                         </div>
                     </div>
                 </div>
