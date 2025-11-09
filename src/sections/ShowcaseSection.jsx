@@ -59,7 +59,7 @@ const ShowcaseSection = () => {
                         </div>
                         <div className="text-content">
                             <a href= "https://creation.builders" target = "_blank" rel="noopener noreferrer">
-                                <h2>Creation: The cursor for CAD</h2>
+                                <h2>Creation: The Cursor for CAD</h2>
                             </a>
                         </div>
                     </div>
