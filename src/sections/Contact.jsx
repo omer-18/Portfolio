@@ -7,6 +7,8 @@ import ContactExperience from "../components/Models/contact/ContactExperience";
 const Contact = () => {
     const formRef = useRef(null);
     const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState(false);
+    const [error, setError] = useState("");
     const [form, setForm] = useState({
         name: "",
         email: "",
@@ -23,6 +25,8 @@ const Contact = () => {
         setLoading(true); // Show loading state
 
         try {
+            setError("");
+            setSuccess(false);
             await emailjs.sendForm(
                 import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
                 import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
@@ -30,12 +34,16 @@ const Contact = () => {
                 import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
             );
 
-            // Reset form and stop loading
+            // Reset form and show success
             setForm({ name: "", email: "", message: "" });
+            setSuccess(true);
+            setTimeout(() => setSuccess(false), 5000);
         } catch (error) {
-            console.error("EmailJS Error:", error); // Optional: show toast
+            console.error("EmailJS Error:", error);
+            setError("Failed to send message. Please try again or contact me directly.");
+            setTimeout(() => setError(""), 5000);
         } finally {
-            setLoading(false); // Always stop loading, even on error
+            setLoading(false);
         }
     };
 
@@ -49,7 +57,7 @@ const Contact = () => {
                 <div className="grid-12-cols mt-16">
                     {/* Contact Form - Left Column */}
                     <div className="xl:col-span-5">
-                        <div className="flex-center card-border rounded-xl p-10">
+                        <div className="flex-center card-border rounded-xl p-5 md:p-10">
                             <form
                                 ref={formRef}
                                 onSubmit={handleSubmit}
@@ -94,6 +102,12 @@ const Contact = () => {
                                     />
                                 </div>
 
+                                {(success || error) && (
+                                    <div className={`p-4 rounded-md ${success ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'}`}>
+                                        {success ? "✓ Message sent successfully!" : error}
+                                    </div>
+                                )}
+
                                 <button type="submit" disabled={loading}>
                                     <div className="cta-button group">
                                         <div className="bg-circle" />
@@ -110,7 +124,7 @@ const Contact = () => {
                     </div>
 
                     {/* 3D Experience - Right Column */}
-                    <div className="xl:col-span-7 min-h-96">
+                    <div className="xl:col-span-7 min-h-64 md:min-h-96">
                         <div className="bg-[#cd7c2e] w-full h-full hover:cursor-grab rounded-3xl overflow-hidden">
                             <ContactExperience />
                         </div>

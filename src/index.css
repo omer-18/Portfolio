@@ -145,7 +145,7 @@ section {
             @apply flex;
 
             .inner {
-                @apply px-5 py-2 rounded-lg bg-white text-black group-hover:bg-black-50 transition-colors duration-300;
+                @apply px-3 md:px-5 py-2 rounded-lg bg-white text-black group-hover:bg-black-50 transition-colors duration-300 text-sm md:text-base;
 
                 span {
                     @apply group-hover:text-white transition-colors duration-300;
@@ -155,41 +155,41 @@ section {
     }
 
     .app-showcase {
-        @apply w-full mt-20 px-5 md:px-20 py-10 md:py-20 flex items-center justify-center;
+        @apply w-full mt-12 px-5 md:px-20 py-8 md:py-12 flex items-center justify-center;
 
         .showcaselayout {
-            @apply flex xl:flex-row flex-col gap-10 justify-between;
+            @apply flex xl:flex-row flex-col gap-6 justify-between xl:items-center;
         }
 
         .first-project-wrapper {
-            @apply h-full flex flex-col justify-between xl:w-[60%];
+            @apply h-full flex flex-col xl:w-[60%];
 
             .image-wrapper {
-                @apply xl:h-[70vh] md:h-[50vh] h-96 relative;
+                @apply xl:h-[50vh] md:h-[40vh] h-64 sm:h-80 relative;
 
-                img {
+                img, video {
                     @apply w-full h-full object-cover rounded-xl absolute inset-0;
                 }
             }
 
             .text-content {
-                @apply space-y-5 mt-5;
+                @apply space-y-3 mt-4;
 
                 .badges {
-                    @apply flex gap-2 mb-4;
+                    @apply flex gap-2 mb-3;
                 }
 
                 h2 {
-                    @apply text-2xl md:text-3xl lg:text-4xl font-bold;
+                    @apply text-xl md:text-2xl lg:text-3xl font-bold;
                 }
             }
         }
 
         .project-list-wrapper {
-            @apply flex md:flex-row flex-col xl:flex-col gap-10 xl:w-[40%];
+            @apply flex md:flex-row flex-col xl:flex-col gap-6 xl:w-[40%];
 
             .image-wrapper {
-                @apply xl:h-[37vh] md:h-52 lg:h-72 h-64 relative rounded-xl xl:px-5 2xl:px-12 py-0;
+                @apply xl:h-[28vh] md:h-44 lg:h-56 h-56 relative rounded-xl xl:px-4 2xl:px-8 py-0;
             }
 
             img {
@@ -197,7 +197,7 @@ section {
             }
 
             h2 {
-                @apply text-lg md:text-xl lg:text-2xl font-semibold mt-5;
+                @apply text-base md:text-lg lg:text-xl font-semibold mt-4;
             }
         }
     }
@@ -281,7 +281,7 @@ section {
     }
 
     .tech-icon-wrapper {
-        @apply flex justify-center items-center w-52 h-60 relative;
+        @apply flex justify-center items-center w-40 md:w-52 h-48 md:h-60 relative;
     }
 
     form {

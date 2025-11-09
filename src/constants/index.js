@@ -148,7 +148,33 @@ const techStackIcons = [
 const expCards = [
   {
     review:
-"Omer approached his work with initiative and strong problem-solving instincts, helping shape an AI automation system from the ground up. His ability to work independently and adapt to challenges made a clear impact on the project’s early progress.",
+"Omer's entrepreneurial vision and technical execution at Creation showcase exceptional full-stack capabilities. His ability to build production-ready AI systems from the ground up demonstrates strong product thinking and technical leadership.",
+    imgPath: "/images/exp5.png",
+    logoPath: "/images/logo5.png",
+    title: "Co-Founder - Creation",
+    date: "October 2025 - Present | Toronto, ON, Canada",
+    responsibilities: [
+      "Developed a full-stack AI-powered CAD assistant that converts prompts into production-ready CAD files and technical drawings in seconds; launched a waitlist that garnered 200+ sign-ups",
+      "Built a typed Next.js + FastAPI stack with structured logging, async I/O, and schema-validated APIs, improving reliability, cutting p95 latency by 40%, and accelerating UI iteration 10×",
+      "Designed a 3-entity DynamoDB table with partition/sort keys and secure S3 storage for reliable, versioned data",
+    ],
+  },
+  {
+    review:
+"Omer's embedded software engineering work demonstrates exceptional technical depth and cross-functional collaboration. His simulator development approach shows strong systems thinking and will significantly accelerate our product development cycle.",
+    imgPath: "/images/exp4.png",
+    logoPath: "/images/logo4.png",
+    title: "Embedded Software Engineering Intern - WDI Wise Device Inc.",
+    date: "September 2025 - December 2025 | Toronto, ON, Canada",
+    responsibilities: [
+      "Engineened a simulator for an autofocus sensor replicating Image Capture → FPGA → Firmware → Linux → PID control, collaborating with firmware teams and projected to cut development and validation time by 80%",
+      "Developed Python models of FPGA image-processing stages to replicate hardware logic, expected to replace 9 of 10 hardware tests while enhancing simulation and long-term system robustness",
+      "Implemented Linux-side validation workflows in simulation to replicate firmware–OS interactions, anticipated to reduce test turnaround from 10+ days to 2–3 days and accelerate debugging cycles",
+    ],
+  },
+  {
+    review:
+"Omer approached his work with initiative and strong problem-solving instincts, helping shape an AI automation system from the ground up. His ability to work independently and adapt to challenges made a clear impact on the project's early progress.",
     imgPath: "/images/exp1.png",
     logoPath: "/images/logo1.png",
     title: "AI/ML Engineering Intern - ONIT Energy",
@@ -172,7 +198,8 @@ const expCards = [
   },
   {
     review:
-    "Omer’s work on our embedded flight systems played a key role in enabling real-time drone tracking. His deep understanding of hardware-software integration significantly improved our system’s responsiveness and control accuracy",    imgPath: "/images/exp3.png",
+    "Omer's work on our embedded flight systems played a key role in enabling real-time drone tracking. His deep understanding of hardware-software integration significantly improved our system's responsiveness and control accuracy",
+    imgPath: "/images/exp3.png",
     logoPath: "/images/logo3.png",
     title: "Embedded Flight Software Project Manager - WARG",
     date: "November 2023 - June 2025 | Waterloo, ON, Canada",
@@ -184,6 +211,14 @@ const expCards = [
 ];
 
 const expLogos = [
+  {
+    name: "logo5",
+    imgPath: "/images/logo5.png",
+  },
+  {
+    name: "logo4",
+    imgPath: "/images/logo4.png",
+  },
   {
     name: "logo1",
     imgPath: "/images/logo1.png",
