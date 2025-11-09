@@ -151,12 +151,11 @@ const expCards = [
 "Omer approached his work with initiative and strong problem-solving instincts, helping shape an AI automation system from the ground up. His ability to work independently and adapt to challenges made a clear impact on the project’s early progress.",
     imgPath: "/images/exp1.png",
     logoPath: "/images/logo1.png",
-    title: "AI/ML Developer Intern - ONIT Energy",
+    title: "AI/ML Engineering Intern - ONIT Energy",
     date: "January 2025 - April 2025 | Toronto, ON, Canada",
     responsibilities: [
-      "Independently planned and developed a long-term AI outbound calling project, integrating Whisper, BERT, DialoGPT, Tacotron 2, and WaveGlow into a real-time STT → NLP → TTS pipeline",
-      "Processed 3,000+ calls by automating transcription, MFCC extraction, and diarization to support model training.",
-      "Fine-tuned BERT model for 3-class intent recognition, boosting dialogue accuracy by 25% on test prompts.",
+      "Developed an AI-driven outbound calling system integrating Whisper, BERT, DialoGPT, and Tacotron/WaveGlow into a real-time STT → NLP → TTS pipeline, cutting manual call handling from 500 calls/day to under 200",
+      "Automated preprocessing for 3,000+ audio calls (transcription, MFCC extraction, diarization), reducing dataset preparation from 3 hours per batch to under 30 minutes and improving training throughput by 6×",
     ],
   },
   {
@@ -167,9 +166,8 @@ const expCards = [
     title: "Product Development Engineering Intern - Jacobsen Xray",
     date: "June 2020 - December 2023 | Toronto, ON, Canada",
     responsibilities: [
-      "Designed 3D CAD model of custom metal scrubbing machine in SolidWorks, cutting design iteration time by 40%.",
-      "Helped develop a comprehensive machine operating manual, ensuring proper usage, reducing onboarding errors by 60%",
-      "Conducted in-depth research on metallurgy applications, contributing to the design of a patented product",
+      "Designed 3D CAD models of a scrubbing machine in SolidWorks and AutoCAD, cutting iteration time by 40%",
+      "Optimized prototyping workflow with CAD-based testing, accelerating cycles and reducing redesigns by 30%",
     ],
   },
   {
@@ -177,11 +175,10 @@ const expCards = [
     "Omer’s work on our embedded flight systems played a key role in enabling real-time drone tracking. His deep understanding of hardware-software integration significantly improved our system’s responsiveness and control accuracy",    imgPath: "/images/exp3.png",
     logoPath: "/images/logo3.png",
     title: "Embedded Flight Software Project Manager - WARG",
-    date: "November 2023 - Present | Waterloo, ON, Canada",
+    date: "November 2023 - June 2025 | Waterloo, ON, Canada",
     responsibilities: [
-      "Used MAVLink to receive data from a Drone Mission Planner and transmit to a Seeeduino over a WiFi network, enabling real-time movement of the Tracking Antenna’s yaw and pitch, with 95% drone tracking accuracy.",
-      "Utilized ADC for voltage-to-digital signal conversion and used SPI communication to transmit ADC values to MCU",
-      "Programmed MCU to interpret data and generate PWM signals for variable motor speeds on STM32 Nucleo.",
+      "Developed the end-to-end tracking antenna pipeline (drone telemetry → UDP → ADC/SPI → MCU PWM → motor actuation), delivering 95% tracking accuracy and reducing alignment error to 5° in real-time trials",
+      "Applied ADC-to-SPI communication for sensor inputs enabling precise motor control with 50+ verified test cycles",
     ],
   },
 ];
