@@ -16,7 +16,8 @@ const App = () => {
       <ShowcaseSection />
       {/* Not including this because don't have enough companies worked with, and its hard to find logos to use
       <LogoShowcase />*/}
-      <FeatureCards/>
+      {/* Looks bad, don't need it
+      <FeatureCards/>*/}
       <ExperienceSection/>
       <TechStack/>
       <Contact/>

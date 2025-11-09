@@ -29,7 +29,7 @@ const words = [
 ];
 
 const counterItems = [
-  { value: 3, suffix: "nd Year", label: "student at University of Waterloo" },
+  { value: 3, suffix: "rd Year", label: "student at University of Waterloo" },
   { suffix: "My Resume", label: "Please click :)", link:"https://drive.google.com/file/d/1mEPkvjean7oUlc5_laEJK566CkU431GP/view?usp=sharing" },
   {value: 24, suffix: "+", label: "Months of Experience" }
   /* { value: 0, suffix: "+", label: "Huzz" }, */
