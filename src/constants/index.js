@@ -155,8 +155,6 @@ const expCards = [
     date: "October 2025 - Present | Toronto, ON, Canada",
     responsibilities: [
       "Developed a full-stack AI-powered CAD assistant that converts prompts into production-ready CAD files and technical drawings in seconds; launched a waitlist that garnered 200+ sign-ups",
-      "Built a typed Next.js + FastAPI stack with structured logging, async I/O, and schema-validated APIs, improving reliability, cutting p95 latency by 40%, and accelerating UI iteration 10×",
-      "Designed a 3-entity DynamoDB table with partition/sort keys and secure S3 storage for reliable, versioned data",
     ],
   },
   {
@@ -167,9 +165,7 @@ const expCards = [
     title: "Embedded Software Engineering Intern - WDI Wise Device Inc.",
     date: "September 2025 - December 2025 | Toronto, ON, Canada",
     responsibilities: [
-      "Engineened a simulator for an autofocus sensor replicating Image Capture → FPGA → Firmware → Linux → PID control, collaborating with firmware teams and projected to cut development and validation time by 80%",
-      "Developed Python models of FPGA image-processing stages to replicate hardware logic, expected to replace 9 of 10 hardware tests while enhancing simulation and long-term system robustness",
-      "Implemented Linux-side validation workflows in simulation to replicate firmware–OS interactions, anticipated to reduce test turnaround from 10+ days to 2–3 days and accelerate debugging cycles",
+      "Engineered a simulator for an autofocus sensor replicating Image Capture → FPGA → Firmware → Linux → PID control, collaborating with firmware teams and projected to cut development and validation time by 80%",
     ],
   },
   {
@@ -181,7 +177,6 @@ const expCards = [
     date: "January 2025 - April 2025 | Toronto, ON, Canada",
     responsibilities: [
       "Developed an AI-driven outbound calling system integrating Whisper, BERT, DialoGPT, and Tacotron/WaveGlow into a real-time STT → NLP → TTS pipeline, cutting manual call handling from 500 calls/day to under 200",
-      "Automated preprocessing for 3,000+ audio calls (transcription, MFCC extraction, diarization), reducing dataset preparation from 3 hours per batch to under 30 minutes and improving training throughput by 6×",
     ],
   },
   {
@@ -192,8 +187,7 @@ const expCards = [
     title: "Product Development Engineering Intern - Jacobsen Xray",
     date: "June 2020 - December 2023 | Toronto, ON, Canada",
     responsibilities: [
-      "Designed 3D CAD models of a scrubbing machine in SolidWorks and AutoCAD, cutting iteration time by 40%",
-      "Optimized prototyping workflow with CAD-based testing, accelerating cycles and reducing redesigns by 30%",
+      "Designed 3D CAD models of a scrubbing machine in SolidWorks and AutoCAD, cutting iteration time by 40%"
     ],
   },
   {
@@ -205,7 +199,6 @@ const expCards = [
     date: "November 2023 - June 2025 | Waterloo, ON, Canada",
     responsibilities: [
       "Developed the end-to-end tracking antenna pipeline (drone telemetry → UDP → ADC/SPI → MCU PWM → motor actuation), delivering 95% tracking accuracy and reducing alignment error to 5° in real-time trials",
-      "Applied ADC-to-SPI communication for sensor inputs enabling precise motor control with 50+ verified test cycles",
     ],
   },
 ];
