@@ -118,7 +118,11 @@ section {
         }
 
         .logo {
-            @apply text-white-50 text-xl md:text-2xl font-semibold transition-transform duration-300 hover:scale-105;
+            @apply text-white-50 text-xl md:text-2xl font-semibold transition-transform duration-300 hover:scale-105 flex items-center gap-3;
+        }
+
+        .logo-icon {
+            @apply w-8 h-8 md:w-10 md:h-10 object-contain;
         }
 
         nav.desktop {
@@ -162,42 +166,94 @@ section {
         }
 
         .first-project-wrapper {
-            @apply h-full flex flex-col xl:w-[60%];
+            @apply h-full flex flex-col xl:w-[58%];
 
             .image-wrapper {
-                @apply xl:h-[50vh] md:h-[40vh] h-64 sm:h-80 relative;
+                @apply xl:h-[45vh] md:h-[38vh] h-64 sm:h-72 relative overflow-hidden rounded-2xl border border-black-50 bg-black-200;
+                transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                will-change: transform, border-color, box-shadow;
+
+                &:hover {
+                    transform: translateY(-4px);
+                    border-color: rgba(255, 255, 255, 0.2);
+                    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+                }
 
                 img, video {
-                    @apply w-full h-full object-cover rounded-xl absolute inset-0;
+                    @apply w-full h-full object-cover rounded-2xl absolute inset-0;
+                    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                    will-change: transform;
+                }
+
+                &:hover img,
+                &:hover video {
+                    transform: scale(1.05);
                 }
             }
 
             .text-content {
-                @apply space-y-3 mt-4;
+                @apply space-y-2 mt-4;
 
                 .badges {
                     @apply flex gap-2 mb-3;
                 }
 
                 h2 {
-                    @apply text-xl md:text-2xl lg:text-3xl font-bold;
+                    @apply text-xl md:text-2xl lg:text-3xl font-bold text-white-50;
+                    transition: color 0.3s ease;
+                    
+                    &:hover {
+                        @apply text-white;
+                    }
                 }
             }
         }
 
         .project-list-wrapper {
-            @apply flex md:flex-row flex-col xl:flex-col gap-6 xl:w-[40%];
+            @apply flex md:flex-row flex-col xl:flex-col gap-6 xl:w-[42%];
+
+            .project {
+                @apply flex flex-col;
+            }
 
             .image-wrapper {
-                @apply xl:h-[28vh] md:h-44 lg:h-56 h-56 relative rounded-xl xl:px-4 2xl:px-8 py-0;
+                @apply xl:h-[24vh] md:h-44 lg:h-52 h-56 relative rounded-2xl overflow-hidden border border-black-50;
+                transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                will-change: transform, border-color, box-shadow;
+                padding: 1rem;
+                
+                @media (min-width: 640px) {
+                    padding: 1.5rem;
+                }
+                
+                @media (min-width: 1024px) {
+                    padding: 2rem;
+                }
+
+                &:hover {
+                    transform: translateY(-4px);
+                    border-color: rgba(255, 255, 255, 0.2);
+                    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+                }
             }
 
             img {
                 @apply w-full h-full object-contain rounded-xl;
+                transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                will-change: transform;
+            }
+
+            .image-wrapper:hover img {
+                transform: scale(1.08);
             }
 
             h2 {
-                @apply text-base md:text-lg lg:text-xl font-semibold mt-4;
+                @apply text-base md:text-lg lg:text-xl font-semibold mt-4 text-white-50;
+                transition: color 0.3s ease;
+                
+                &:hover {
+                    @apply text-white;
+                }
             }
         }
     }

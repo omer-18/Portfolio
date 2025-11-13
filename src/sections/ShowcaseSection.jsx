@@ -11,11 +11,15 @@ const ShowcaseSection = () => {
     const project1Ref = useRef(null);
     const project2Ref = useRef(null);
     const project3Ref = useRef(null);
+    const project4Ref = useRef(null);
+    const project5Ref = useRef(null);
+    const project6Ref = useRef(null);
 
 
     useGSAP( () => {
         const projects = [project1Ref.current, project2Ref.current,
-            project3Ref.current];
+            project3Ref.current, project4Ref.current, project5Ref.current,
+            project6Ref.current];
         projects.forEach((card, index) => {
             gsap.fromTo(
                 card,
@@ -45,7 +49,7 @@ const ShowcaseSection = () => {
             <div className="w-full">
                 <div className="showcaselayout">
                     {/* LEFT*/}
-                    <div className="first-project-wrapper" ref = {project1Ref}>
+                    <div className="first-project-wrapper group" ref = {project1Ref}>
                         <div className="image-wrapper">
                             <a href= "https://creation.builders" target = "_blank" rel="noopener noreferrer">
                                 <video 
@@ -54,6 +58,8 @@ const ShowcaseSection = () => {
                                     loop 
                                     muted 
                                     playsInline
+                                    preload="metadata"
+                                    loading="lazy"
                                 />
                             </a>
                         </div>
@@ -66,26 +72,73 @@ const ShowcaseSection = () => {
 
                     {/* RIGHT*/}
                     <div className="project-list-wrapper overflow-hidden">
-                        <div className="project" ref = {project2Ref}>
-                            <div className="image-wrapper bg-[#ffe7eb]">
-                                <a href= "https://devpost.com/software/clif-cj1ql7" target = "_blank" rel="noopener noreferrer">
-                                    <img src="/images/project1.png" alt="CLIF" />
+                        <div className="project group" ref = {project2Ref}>
+                            <div className="image-wrapper bg-gradient-to-br from-rose-500/10 via-purple-500/10 to-pink-500/10 !p-3 sm:!p-4 !h-64 md:!h-48 lg:!h-60 xl:!h-[26vh]">
+                                <a href= "https://devpost.com/software/clif-cj1ql7" target = "_blank" rel="noopener noreferrer" className="flex flex-col sm:flex-row gap-2 w-full h-full">
+                                    <img src="/images/clif1.jpg" alt="CLIF Demo 1" className="flex-1 sm:w-1/2 h-full object-cover rounded-md" loading="lazy" />
+                                    <img src="/images/clif2.jpg" alt="CLIF Demo 2" className="flex-1 sm:w-1/2 h-full object-cover rounded-md" loading="lazy" />
                                 </a>
                             </div>
                             <a href= "https://github.com/omer-18/CLIF" target = "_blank" rel="noopener noreferrer">
-                                <h2>CLIF: Man's next best friend.
-                                    A device that translates sign language to speech in real time.</h2>
+                                <h2>ML-Based Sign Language to Text/Speech Translator</h2>
                             </a>
                         </div>
-                        <div className="project" ref = {project3Ref}>
-                            <div className="image-wrapper bg-[#ffe7eb]">
-                                <a href= "https://drive.google.com/file/d/1WSquqE1vtUMirYIr2BXfIZAak8J8n7VU/view" target = "_blank" rel="noopener noreferrer">
-                                    <img src="/images/project3.png" alt="PID" />
+                        <div className="project group" ref = {project3Ref}>
+                            <div className="image-wrapper bg-gradient-to-br from-amber-500/10 via-orange-500/10 to-yellow-500/10 !p-3 sm:!p-4 !h-64 md:!h-48 lg:!h-60 xl:!h-[26vh]">
+                                <a href="https://drive.google.com/file/d/1TUBsWQnf_FG1uMiiiPaejTno2OFhLpOd/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex flex-col sm:flex-row gap-2 w-full h-full">
+                                    <img src="/images/toyota1.jpg" alt="Toyota Challenge 1" className="flex-1 sm:w-1/2 h-full object-cover rounded-md" loading="lazy" />
+                                    <img src="/images/toyota2.jpg" alt="Toyota Challenge 2" className="flex-1 sm:w-1/2 h-full object-cover rounded-md" loading="lazy" />
                                 </a>
                             </div>
-                            <a href= "https://github.com/omer-18/PID-Controller" target = "_blank" rel="noopener noreferrer">
-                                <h2> PID Controller: Auto-Balancer </h2>
+                            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                                <a href="https://drive.google.com/file/d/1TUBsWQnf_FG1uMiiiPaejTno2OFhLpOd/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                                    <h2>Toyota Innovation Challenge</h2>
+                                </a>
+                                <a href="https://github.com/jay-mango/Toyota_Challenge?tab=readme-ov-file" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity flex-shrink-0">
+                                    <img src="/images/github.png" alt="GitHub" className="w-7 h-7 md:w-10 md:h-10" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* FLIPPED LAYOUT - Second Section */}
+                <div className="showcaselayout mt-8 md:mt-12 xl:mt-16">
+                    {/* LEFT - Two Projects Stacked */}
+                    <div className="project-list-wrapper overflow-hidden">
+                        <div className="project group" ref={project4Ref}>
+                            <div className="image-wrapper bg-gradient-to-br from-emerald-500/10 via-teal-500/10 to-cyan-500/10">
+                                <a href="https://devpost.com/software/edgebin" target="_blank" rel="noopener noreferrer">
+                                    <img src="/images/edgebin2.png" alt="EDGEbin" loading="lazy" />
+                                </a>
+                            </div>
+                            <a href="https://devpost.com/software/edgebin" target="_blank" rel="noopener noreferrer">
+                                <h2>EDGEbin: Eco-Driven Garbage Evaluator</h2>
                             </a>
+                        </div>
+                        <div className="project group" ref={project5Ref}>
+                            <div className="image-wrapper bg-gradient-to-br from-slate-500/10 via-gray-500/10 to-zinc-500/10">
+                                <img src="/images/project2.png" alt="Amazon Interface" loading="lazy" />
+                            </div>
+                            <h2>Amazon Interface Replica</h2>
+                        </div>
+                    </div>
+
+                    {/* RIGHT - Large Project */}
+                    <div className="first-project-wrapper group" ref={project6Ref}>
+                        <div className="image-wrapper">
+                            <video 
+                                src="/videos/PID_OMER_SAJID.mp4" 
+                                autoPlay 
+                                loop 
+                                muted 
+                                playsInline
+                                preload="metadata"
+                                loading="lazy"
+                            />
+                        </div>
+                        <div className="text-content">
+                            <h2>PID Controller: Auto-Balancer</h2>
                         </div>
                     </div>
                 </div>
