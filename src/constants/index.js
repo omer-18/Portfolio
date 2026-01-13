@@ -30,9 +30,7 @@ const words = [
 
 const counterItems = [
   { value: 3, suffix: "rd Year", label: "student at University of Waterloo" },
-  { suffix: "My Resume", label: "Please click :)", link:"https://drive.google.com/file/d/1mEPkvjean7oUlc5_laEJK566CkU431GP/view?usp=sharing" },
-  {value: 24, suffix: "+", label: "Months of Experience" }
-  /* { value: 0, suffix: "+", label: "Huzz" }, */
+  { suffix: "My Resume", label: "Please click :)", link:"https://drive.google.com/file/d/1mEPkvjean7oUlc5_laEJK566CkU431GP/view?usp=sharing" }
 ];
 
 const logoIconsList = [
@@ -154,7 +152,10 @@ const expCards = [
     title: "Co-Founder - Creation",
     date: "October 2025 - Present | Toronto, ON, Canada",
     responsibilities: [
-      "Developed a full-stack AI-powered CAD assistant that converts prompts into production-ready CAD files and technical drawings in seconds; launched a waitlist that garnered 200+ sign-ups",
+      "Developed a full-stack AI-powered Solidworks CAD agent that converts prompts into production-ready CAD files and technical drawings in seconds; launched a waitlist that garnered 300+ sign-ups",
+      "Built a typed Next.js + FastAPI stack with structured logging, async I/O, and schema-validated APIs, improving reliability, cutting p95 latency by 40%, and accelerating UI iteration 10×",
+      "Achieved 95%+ accuracy by composing Gemini 3.0 prompts with schemas and dual validation (Zod + Pydantic)",
+      "Designed a 3-entity DynamoDB table with partition/sort keys and secure S3 storage for reliable, versioned data"
     ],
   },
   {
@@ -165,7 +166,9 @@ const expCards = [
     title: "Embedded Software Engineering Intern - WDI Wise Device Inc.",
     date: "September 2025 - December 2025 | Toronto, ON, Canada",
     responsibilities: [
-      "Engineered a simulator for an autofocus sensor replicating Image Capture → FPGA → Firmware → Linux → PID control, collaborating with firmware teams and projected to cut development and validation time by 80%",
+      "Engineered a simulator for an autofocus sensor replicating Image Capture → FPGA → Firmware → Linux → PID control, collaborating with firmware teams, cutting development and validation time by 80%",
+      "Developed Python models of FPGA image-processing stages to replicate hardware logic, replacing 9 of 10 tests",
+      "Developed a C++ diagnostic automation tool with TCP/IP socket communication to execute scripts on embedded Linux hardware, reducing field debugging time by 75%"
     ],
   },
   {
@@ -177,6 +180,8 @@ const expCards = [
     date: "January 2025 - April 2025 | Toronto, ON, Canada",
     responsibilities: [
       "Developed an AI-driven outbound calling system integrating Whisper, BERT, DialoGPT, and Tacotron/WaveGlow into a real-time STT → NLP → TTS pipeline, cutting manual call handling from 500 calls/day to under 200",
+      "Automated preprocessing for 3,000+ audio calls (transcription, MFCC extraction, diarization), reducing dataset preparation from 3 hours per batch to under 30 minutes and improving training throughput by 6×",
+      "Fine-tuned BERT model for 3-class intent recognition, boosting dialogue accuracy by 25% on test prompts"
     ],
   },
   {
@@ -187,7 +192,8 @@ const expCards = [
     title: "Product Development Engineering Intern - Jacobsen Xray",
     date: "June 2020 - December 2023 | Toronto, ON, Canada",
     responsibilities: [
-      "Designed 3D CAD models of a scrubbing machine in SolidWorks and AutoCAD, cutting iteration time by 40%"
+      "Designed 3D CAD models of a scrubbing machine in SolidWorks and AutoCAD, cutting iteration time by 40%",
+      "Helped develop a comprehensive machine operating manual, ensuring proper usage, reducing onboarding errors by 60%."
     ],
   },
   {
@@ -199,6 +205,7 @@ const expCards = [
     date: "November 2023 - June 2025 | Waterloo, ON, Canada",
     responsibilities: [
       "Developed the end-to-end tracking antenna pipeline (drone telemetry → UDP → ADC/SPI → MCU PWM → motor actuation), delivering 95% tracking accuracy and reducing alignment error to 5° in real-time trials",
+      "Programmed the STM32/ESP32 to process ADC input and generate PWM outputs, supporting variable-speed motor actuation and ensuring stable antenna dynamics across 100+ field tests",
     ],
   },
 ];

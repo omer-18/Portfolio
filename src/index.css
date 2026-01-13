@@ -236,6 +236,23 @@ section {
                     border-color: rgba(255, 255, 255, 0.2);
                     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
                 }
+                
+                &:hover img {
+                    filter: brightness(0.3);
+                }
+            }
+            
+            .project-overlay {
+                @apply absolute inset-0 bg-black/80 opacity-0 transition-opacity duration-300 flex items-center justify-center p-4 rounded-2xl pointer-events-none;
+            }
+            
+            .image-wrapper:hover .project-overlay {
+                @apply opacity-100;
+            }
+            
+            .project-description {
+                @apply text-white text-sm md:text-base leading-relaxed text-center;
+                font-family: "Mona Sans", sans-serif;
             }
 
             img {
@@ -358,6 +375,14 @@ section {
                 @apply inline-block;
             }
         }
+    }
+
+    .section-divider {
+        @apply w-full flex justify-center py-8 md:py-12;
+    }
+
+    .divider-line {
+        @apply w-full max-w-7xl mx-auto h-px bg-gradient-to-r from-transparent via-white/20 to-transparent;
     }
 
     .footer {

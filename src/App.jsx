@@ -7,19 +7,24 @@ import ExperienceSection from "./sections/ExperienceSection.jsx";
 import TechStack from "./sections/TechStack.jsx";
 import Contact from "./sections/Contact.jsx";
 import Footer from "./sections/Footer.jsx";
+import SectionDivider from "./components/SectionDivider.jsx";
 
 const App = () => {
   return (
     <>
       <NavBar/>
       <Hero />
+      <SectionDivider />
       <ShowcaseSection />
+      <SectionDivider />
       {/* Not including this because don't have enough companies worked with, and its hard to find logos to use
       <LogoShowcase />*/}
       {/* Looks bad, don't need it
       <FeatureCards/>*/}
       <ExperienceSection/>
+      <SectionDivider />
       <TechStack/>
+      <SectionDivider />
       <Contact/>
       <Footer/>
     </>

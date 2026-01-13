@@ -96,7 +96,6 @@ const Experience = () => {
             <div className="w-full h-full xl:px-32 md:px-16 px-8">
                 <TitleHeader
                     title="Experience"
-                    sub="💼 My Career Overview"
                 />
                 <div className="mt-32 relative">
                     <div className="relative z-50 xl:space-y-32 space-y-10 max-w-6xl mx-auto">
