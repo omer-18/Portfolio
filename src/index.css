@@ -254,6 +254,27 @@ section {
                 @apply text-white text-sm md:text-base leading-relaxed text-center;
                 font-family: "Mona Sans", sans-serif;
             }
+            
+            .video-play-overlay {
+                @apply absolute inset-0 flex items-center justify-center bg-black/60 cursor-pointer transition-opacity duration-300;
+                pointer-events: auto;
+                z-index: 10;
+                
+                p {
+                    @apply text-white text-lg md:text-xl font-semibold;
+                    font-family: "Mona Sans", sans-serif;
+                }
+            }
+            
+            .video-buttons-overlay {
+                @apply absolute inset-0 flex items-center justify-center gap-4 bg-black/70 transition-opacity duration-300;
+                pointer-events: auto;
+                z-index: 10;
+            }
+            
+            .image-wrapper video {
+                cursor: pointer;
+            }
 
             img {
                 @apply w-full h-full object-contain rounded-xl;
@@ -408,6 +429,61 @@ section {
             }
         }
     }
+}
+
+/* Video button styles - outside nested structure for higher specificity */
+.video-play-button {
+    padding: 0.75rem 1.5rem !important;
+    background-color: rgb(126 34 206) !important;
+    color: white !important;
+    font-weight: 600 !important;
+    border-radius: 0.5rem !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    font-family: "Mona Sans", sans-serif !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    border: none !important;
+    font-size: 1rem !important;
+}
+
+.video-play-button:hover {
+    background-color: rgb(147 51 234) !important;
+    transform: scale(1.05) translateY(-2px) !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.video-play-button:active {
+    transform: scale(0.95) !important;
+}
+
+.video-visit-button {
+    padding: 0.75rem 1.5rem !important;
+    background-color: rgb(126 34 206) !important;
+    color: white !important;
+    font-weight: 600 !important;
+    border-radius: 0.5rem !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    font-family: "Mona Sans", sans-serif !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    border: none !important;
+    font-size: 1rem !important;
+}
+
+.video-visit-button:hover {
+    background-color: rgb(147 51 234) !important;
+    transform: scale(1.05) translateY(-2px) !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.video-visit-button:active {
+    transform: scale(0.95) !important;
 }
 
 /* Hero text slider starts */

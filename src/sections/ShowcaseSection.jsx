@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from 'react'
+import React, {useRef, useEffect, useState} from 'react'
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from "@gsap/react";
@@ -20,6 +20,9 @@ const ShowcaseSection = () => {
     const creationVideoRef = useRef(null);
     const pidVideoRef = useRef(null);
     const tradeGuardVideoRef = useRef(null);
+    const [creationPlaying, setCreationPlaying] = useState(false);
+    const [pidPlaying, setPidPlaying] = useState(false);
+    const [tradeGuardPlaying, setTradeGuardPlaying] = useState(false);
 
     // Preload videos when component mounts to reduce lag on hover
     useEffect(() => {
@@ -47,6 +50,7 @@ const ShowcaseSection = () => {
             project6Ref.current, project7Ref.current, project8Ref.current,
             project9Ref.current];
         projects.forEach((card, index) => {
+            if (!card) return;
             gsap.fromTo(
                 card,
                 {y:50, opacity: 0},
@@ -54,18 +58,24 @@ const ShowcaseSection = () => {
                     y:0,
                     opacity: 1,
                     duration: 1,
-                    delay: 0.3 *(index + 1),
+                    delay: 0.1 * index,
+                    ease: "power2.out",
                     scrollTrigger: {
                         trigger: card,
-                        start: 'top bottom-=80'
+                        start: 'top 85%',
+                        end: 'top 50%',
+                        toggleActions: 'play none none none',
+                        once: true
                     }
                 }
             )
         })
-        gsap.fromTo(
-            sectionRef.current,
-            {opacity: 0},
-            {opacity: 1, duration: 1.5})
+        if (sectionRef.current) {
+            gsap.fromTo(
+                sectionRef.current,
+                {opacity: 0},
+                {opacity: 1, duration: 1.5})
+        }
 
     }, []);
 
@@ -76,33 +86,60 @@ const ShowcaseSection = () => {
                 <div className="showcaselayout">
                     {/* LEFT*/}
                     <div className="first-project-wrapper group" ref = {project1Ref}>
-                        <div className="image-wrapper">
-                            <a href= "https://creation.builders" target = "_blank" rel="noopener noreferrer">
-                                <video 
-                                    ref={creationVideoRef}
-                                    src="/videos/tire-finish-finish-video.mp4" 
-                                    loop 
-                                    muted 
-                                    playsInline
-                                    preload="auto"
-                                    onMouseEnter={(e) => {
-                                        const video = e.currentTarget;
-                                        if (video.readyState >= 2) {
-                                            video.play().catch(() => {});
-                                        }
-                                    }}
-                                    onMouseLeave={(e) => {
-                                        const video = e.currentTarget;
+                        <div className="image-wrapper relative">
+                            <video 
+                                ref={creationVideoRef}
+                                src="/videos/tire-finish-finish-video.mp4" 
+                                loop 
+                                muted 
+                                playsInline
+                                preload="auto"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    const video = e.currentTarget;
+                                    if (video.paused) {
+                                        video.play().then(() => setCreationPlaying(true)).catch(() => {});
+                                    } else {
                                         video.pause();
-                                        video.currentTime = 0;
-                                    }}
-                                />
-                            </a>
+                                        setCreationPlaying(false);
+                                    }
+                                }}
+                                onPlay={() => setCreationPlaying(true)}
+                                onPause={() => setCreationPlaying(false)}
+                            />
                         </div>
                         <div className="text-content">
                             <a href= "https://creation.builders" target = "_blank" rel="noopener noreferrer">
                                 <h2>Creation: The Cursor for CAD</h2>
                             </a>
+                            <div className="flex items-center gap-4 mt-4">
+                                <button
+                                    className="video-play-button"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        if (creationVideoRef.current) {
+                                            if (creationVideoRef.current.paused) {
+                                                creationVideoRef.current.play().then(() => setCreationPlaying(true)).catch(() => {});
+                                            } else {
+                                                creationVideoRef.current.pause();
+                                                setCreationPlaying(false);
+                                            }
+                                        }
+                                    }}
+                                >
+                                    {creationPlaying ? "Pause" : "Click to play"}
+                                </button>
+                                <a 
+                                    href="https://creation.builders" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="video-visit-button"
+                                >
+                                    Visit
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -199,7 +236,7 @@ const ShowcaseSection = () => {
 
                     {/* RIGHT - Large Project */}
                     <div className="first-project-wrapper group" ref={project6Ref}>
-                        <div className="image-wrapper">
+                        <div className="image-wrapper relative">
                             <video 
                                 ref={pidVideoRef}
                                 src="/videos/PID_OMER_SAJID.mp4" 
@@ -207,21 +244,42 @@ const ShowcaseSection = () => {
                                 muted 
                                 playsInline
                                 preload="auto"
-                                onMouseEnter={(e) => {
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
                                     const video = e.currentTarget;
-                                    if (video.readyState >= 2) {
-                                        video.play().catch(() => {});
+                                    if (video.paused) {
+                                        video.play().then(() => setPidPlaying(true)).catch(() => {});
+                                    } else {
+                                        video.pause();
+                                        setPidPlaying(false);
                                     }
                                 }}
-                                onMouseLeave={(e) => {
-                                    const video = e.currentTarget;
-                                    video.pause();
-                                    video.currentTime = 0;
-                                }}
+                                onPlay={() => setPidPlaying(true)}
+                                onPause={() => setPidPlaying(false)}
                             />
                         </div>
                         <div className="text-content">
                             <h2>PID Controller: Auto-Balancer</h2>
+                            <div className="flex items-center gap-4 mt-4">
+                                <button
+                                    className="video-play-button"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        if (pidVideoRef.current) {
+                                            if (pidVideoRef.current.paused) {
+                                                pidVideoRef.current.play().then(() => setPidPlaying(true)).catch(() => {});
+                                            } else {
+                                                pidVideoRef.current.pause();
+                                                setPidPlaying(false);
+                                            }
+                                        }
+                                    }}
+                                >
+                                    {pidPlaying ? "Pause" : "Click to play"}
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -230,7 +288,7 @@ const ShowcaseSection = () => {
                 <div className="showcaselayout mt-8 md:mt-12 xl:mt-16">
                     {/* LEFT - TradeGuard Project */}
                     <div className="first-project-wrapper group" ref={project7Ref}>
-                        <div className="image-wrapper">
+                        <div className="image-wrapper relative">
                             <video 
                                 ref={tradeGuardVideoRef}
                                 src="/videos/tradeguard-finish-website-video.mp4" 
@@ -238,17 +296,19 @@ const ShowcaseSection = () => {
                                 muted 
                                 playsInline
                                 preload="auto"
-                                onMouseEnter={(e) => {
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
                                     const video = e.currentTarget;
-                                    if (video.readyState >= 2) {
-                                        video.play().catch(() => {});
+                                    if (video.paused) {
+                                        video.play().then(() => setTradeGuardPlaying(true)).catch(() => {});
+                                    } else {
+                                        video.pause();
+                                        setTradeGuardPlaying(false);
                                     }
                                 }}
-                                onMouseLeave={(e) => {
-                                    const video = e.currentTarget;
-                                    video.pause();
-                                    video.currentTime = 0;
-                                }}
+                                onPlay={() => setTradeGuardPlaying(true)}
+                                onPause={() => setTradeGuardPlaying(false)}
                             />
                         </div>
                         <div className="text-content">
@@ -258,6 +318,33 @@ const ShowcaseSection = () => {
                                 </a>
                                 <a href="https://github.com/omer-18/TradeGuard" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity flex-shrink-0">
                                     <img src="/images/github.png" alt="GitHub" className="w-7 h-7 md:w-10 md:h-10" />
+                                </a>
+                            </div>
+                            <div className="flex items-center gap-4 mt-4">
+                                <button
+                                    className="video-play-button"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        if (tradeGuardVideoRef.current) {
+                                            if (tradeGuardVideoRef.current.paused) {
+                                                tradeGuardVideoRef.current.play().then(() => setTradeGuardPlaying(true)).catch(() => {});
+                                            } else {
+                                                tradeGuardVideoRef.current.pause();
+                                                setTradeGuardPlaying(false);
+                                            }
+                                        }
+                                    }}
+                                >
+                                    {tradeGuardPlaying ? "Pause" : "Click to play"}
+                                </button>
+                                <a 
+                                    href="https://trade-guard-ten.vercel.app/" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="video-visit-button"
+                                >
+                                    Visit
                                 </a>
                             </div>
                         </div>
