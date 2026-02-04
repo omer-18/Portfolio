@@ -30,7 +30,7 @@ const words = [
 
 const counterItems = [
   { value: 3, suffix: "rd Year", label: "student at University of Waterloo" },
-  { suffix: "My Resume", label: "Please click :)", link:"https://drive.google.com/file/d/1PSrAN371d_TBTK2WdF_fyGGL-BeAwagL/view?usp=sharing" }
+  { suffix: "My Resume", label: "Please click :)", link:"https://drive.google.com/file/d/1HFVyF3xeG9a3ehbXC_7iUgQU4Oj2X7Kz/view?usp=sharing" }
 ];
 
 const logoIconsList = [
