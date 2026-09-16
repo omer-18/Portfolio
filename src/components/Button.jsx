@@ -1,11 +1,16 @@
-const Button = ({ text, className, id }) => {
+const Button = ({ text, className, id, onClick }) => {
   return (
     /* if a className exists, render it, otherwise, render an empty string, and always render ctaWrapper */
     <a
         onClick={(e) => {
             e.preventDefault();
 
-            const target = document.getElementById('counter');
+            if (onClick) {
+                onClick();
+                return;
+            }
+
+            const target = document.getElementById('work');
             if (target && id) {
                 const offset = window.innerHeight * 0.15;
 

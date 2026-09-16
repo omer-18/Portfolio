@@ -48,15 +48,15 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="flex-center section-padding">
+        <section id="contact" className="flex-center px-5 md:px-10">
             <div className="w-full h-full md:px-10 px-5">
                 <TitleHeader
                     title="Get in Touch – Let's Connect"
                 />
-                <div className="grid-12-cols mt-16">
+                <div className="grid-12-cols mt-20">
                     {/* Contact Form - Left Column */}
                     <div className="xl:col-span-5">
-                        <div className="flex-center card-border rounded-xl p-5 md:p-10">
+                        <div className="flex-center card-border rounded-xl p-4 md:p-8">
                             <form
                                 ref={formRef}
                                 onSubmit={handleSubmit}
@@ -123,7 +123,7 @@ const Contact = () => {
                     </div>
 
                     {/* 3D Experience - Right Column */}
-                    <div className="xl:col-span-7 min-h-64 md:min-h-96">
+                    <div className="xl:col-span-7 min-h-56 md:min-h-80">
                         <div className="bg-[#cd7c2e] w-full h-full hover:cursor-grab rounded-3xl overflow-hidden">
                             <ContactExperience />
                         </div>

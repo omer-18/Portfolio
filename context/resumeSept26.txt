@@ -1,0 +1,49 @@
+OMER SAJID
+647-451-5295 | osajid@uwaterloo.ca | linkedin.com/omer | github.com/omer | omer-sajid.com
+EDUCATION
+University of Waterloo Waterloo, ON
+Bachelor of Applied Science in Mechatronics Engineering 2023 – 2028
+Relevant Courses: Data Structures & Algorithms, Object Oriented-Programming, Machine Learning, Artificial Intelligence
+Extracurriculars: First Year Mechatronics Representative, Engineering Ambassador, Volleyball
+EXPERIENCE
+Software Engineering Intern May 2026 – Aug 2026
+Randox Laboratories Belfast, UK
+• Built an Uber-style React Native platform for a national healthcare network, coordinating 200+ couriers in the UK
+• Developed a full-stack courier system, using a Node.js/Express REST API that handles 10,000+ daily requests
+alongside a 40+ screen React Native/TypeScript app
+• Modeled a normalized Azure SQL Server schema with indexed queries, achieving sub-200ms query response times
+• Designed a dispatch optimization algorithm auto-assigning jobs to the nearest driver by weighing several factors
+such as GPS location, time-windows, and duty-time limits, cutting manual dispatch effort by 90%
+Founder Oct 2025 – Present
+Creation Toronto, ON
+• Built a full-stack AI-powered SolidWorks CAD agent that converts prompts into production-ready CAD files in
+seconds using a Python backend on AWS; launched a waitlist of 300+ sign-ups
+• Developed an NLP pipeline with the Claude API to interpret raw design prompts and produce manufacturable CAD
+models via the SolidWorks API, powering 100+ automated designs
+• Implemented a RAG pipeline indexing 1,000+ PostgreSQL records to boost model accuracy, consistency, and
+response speed by retrieving prior successful outputs
+Embedded Software Engineering Intern WDI Wise Device Inc. Sept 2025 – Dec 2025
+Toronto, ON
+• Engineered a Python-based simulation platform with NumPy and modular design patterns, improving
+performance and reducing reliance on hardware testing by 85%
+• Implemented Python models of FPGA image-processing stages to replicate hardware logic, replacing 9 of 10 tests
+AI/ML Developer Intern Jan 2025 – Apr 2025
+Ontario Wholesale Energy Toronto, ON
+• Developed an AI-driven outbound calling system integrating Whisper, BERT, DialoGPT, and Tacotron/WaveGlow
+into a real-time STT → NLP → TTS pipeline, cutting manual call handling from 500 calls/day to under 200
+• Automated preprocessing for 3,000+ audio calls (transcription, MFCC extraction, diarization), reducing dataset
+preparation from 3 hours per batch to under 30 minutes and improving training throughput by 6×
+SELECTED PROJECTS
+TradeGuard | Python, Typescript, React.js, Gemini API, MongoDB Jan 2026
+• Engineered a real-time prediction market pipeline in TypeScript using the Kalshi API to ingest from 2000+ active
+markets to store current market state, trade history, and analysis results in MongoDB
+• Constructed an insider trading detection engine using 14 quantitative trading signals with a Python-based context
+engine and the Google Gemini API to detect suspicious behavior and produce a 0–100 risk score
+Sign Language to Text/Speech Translator | Pytorch, TensorFlow, OpenCV March 2025
+• Developed a real-time ASL-to-speech translator in Python using TensorFlow, MediaPipe, and OpenCV
+• Optimized gesture recognition pipeline to run at less than 50ms latency per frame, enabling smooth interaction
+TECHNICAL SKILLS
+Languages: Python, JavaScript, TypeScript, Java, C, C++, SQL, HTML/CSS, Swift, Kotlin
+Frameworks/Libraries: React.js, React Native, Node.js, Next.js, Express.js, GraphQL, FastAPI, Angular
+AI/ML: PyTorch, TensorFlow, Claude API, Gemini API, OpenAI API, OpenCV, Hugging Face Transformers
+Tools/Technologies: Git, AWS, DynamoDB, MongoDB, Firebase, GCP, Microsoft Azure, Docker, Linux, Redis

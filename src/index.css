@@ -1,5 +1,52 @@
-@import url("https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
 @import "tailwindcss";
+
+@font-face {
+    font-family: "Georgia";
+    src: url("/fonts/georgia/georgia-regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Georgia";
+    src: url("/fonts/georgia/georgia-italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Georgia";
+    src: url("/fonts/georgia/georgia-bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Georgia";
+    src: url("/fonts/georgia/georgia-bold-italic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Lora";
+    src: url("/fonts/lora/lora-variable.ttf") format("truetype-variations");
+    font-weight: 400 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Lora";
+    src: url("/fonts/lora/lora-italic-variable.ttf") format("truetype-variations");
+    font-weight: 400 700;
+    font-style: italic;
+    font-display: swap;
+}
 
 :root {
     --gradient: radial-gradient(circle, #e5e5e5 0%, #fff 100%);
@@ -12,7 +59,7 @@ body {
     background-color: black;
     color: white;
     scroll-behavior: smooth;
-    font-family: "Mona Sans", sans-serif;
+    font-family: "Lora", serif;
 }
 
 section {
@@ -20,7 +67,8 @@ section {
 }
 
 @theme {
-    --font-sans: "Mona Sans", sans-serif;
+    --font-sans: "Lora", serif;
+    --font-heading: "Georgia", serif;
     --color-white-50: #d9ecff;
     --color-black-50: #1c1c21;
     --color-black-100: #0e0e10;
@@ -45,10 +93,6 @@ section {
 
     .padding-x-lg {
         @apply px-5 md:px-20;
-    }
-
-    .section-padding {
-        @apply px-5 md:px-10 md:mt-40 mt-20;
     }
 
     .mt-responsive {
@@ -81,26 +125,15 @@ section {
     }
 
     .hero-layout {
-        @apply relative z-10 xl:mt-20 mt-32 md:h-dvh h-[80vh] flex xl:items-center items-start justify-center;
-    }
-
-    .hero-text {
-        @apply flex flex-col justify-center md:text-[50px] text-[20px] font-semibold relative z-10 pointer-events-none;
-        
-        img {
-            @apply size-8 md:size-10 object-contain;
-        }
-        .slide {
-            @apply absolute pt-0 px-2 md:px-5 py-[30px] h-[48px] md:h-[78px] md:translate-y-1 translate-y-0 overflow-hidden;
-        }
+        @apply relative z-10 xl:mt-80 mt-28 min-h-[76vh] md:min-h-0 pb-10 md:pb-[194px] flex items-start justify-center;
     }
 
     .hero-badge {
-        @apply bg-black-200 py-2 px-4 rounded-full w-fit text-sm md:text-base text-nowrap;
+        @apply bg-black-200 py-1.5 px-3.5 rounded-full w-fit text-xs md:text-sm text-nowrap;
     }
 
     .hero-3d-layout {
-        @apply xl:w-[70%] w-full h-full min-h-[50vh] absolute xl:-top-20 top-24 xl:-right-20 right-0;
+        @apply xl:w-[60%] w-full md:h-[52vh] h-[48vh] min-h-[44vh] absolute xl:-top-[150px] top-12 xl:-right-16 right-0;
     }
 
     .navbar {
@@ -120,6 +153,8 @@ section {
 
         .logo {
             @apply text-white-50 text-xl md:text-2xl font-semibold transition-transform duration-300 hover:scale-105 flex items-center gap-3;
+            font-family: "Georgia", serif;
+            font-style: italic;
         }
 
         .logo-icon {
@@ -137,6 +172,8 @@ section {
 
                     span {
                         @apply transition-colors duration-300 hover:text-white;
+                        font-family: "Georgia", serif;
+                        font-style: italic;
                     }
 
                     .underline {
@@ -151,149 +188,123 @@ section {
 
             .inner {
                 @apply px-3 md:px-5 py-2 rounded-lg bg-white text-black group-hover:bg-black-50 transition-colors duration-300 text-sm md:text-base;
+                font-family: "Georgia", serif;
+                font-style: italic;
 
                 span {
                     @apply group-hover:text-white transition-colors duration-300;
                 }
             }
         }
+
+        .mail-icon-btn {
+            @apply flex items-center justify-center text-white-50 hover:text-white transition-colors duration-300;
+
+            svg {
+                @apply size-5 md:size-6;
+            }
+        }
     }
 
     .app-showcase {
-        @apply w-full mt-12 px-5 md:px-20 py-8 md:py-12 flex items-center justify-center;
+        @apply w-full;
+    }
 
-        .showcaselayout {
-            @apply flex xl:flex-row flex-col gap-6 justify-between xl:items-center;
-        }
+    .project-grid {
+        @apply grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10 max-w-4xl mx-auto;
+    }
 
-        .first-project-wrapper {
-            @apply h-full flex flex-col xl:w-[58%];
+    .project-card {
+        @apply flex flex-col w-[95%] mx-auto;
 
-            .image-wrapper {
-                @apply xl:h-[45vh] md:h-[38vh] h-64 sm:h-72 relative overflow-hidden rounded-2xl border border-black-50 bg-black-200;
-                transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-                will-change: transform, border-color, box-shadow;
+        .project-card-media {
+            @apply relative h-[211px] sm:h-[236px] md:h-[261px] rounded-2xl overflow-hidden border border-black-50 bg-black-200 cursor-pointer;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform, border-color, box-shadow;
 
-                &:hover {
-                    transform: translateY(-4px);
-                    border-color: rgba(255, 255, 255, 0.2);
-                    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-                }
-
-                img, video {
-                    @apply w-full h-full object-cover rounded-2xl absolute inset-0;
-                    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-                    will-change: transform;
-                }
-
-                &:hover img,
-                &:hover video {
-                    transform: scale(1.05);
-                }
+            &:hover {
+                transform: translateY(-4px);
+                border-color: rgba(255, 255, 255, 0.2);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
             }
 
-            .text-content {
-                @apply space-y-2 mt-4;
-
-                .badges {
-                    @apply flex gap-2 mb-3;
-                }
-
-                h2 {
-                    @apply text-xl md:text-2xl lg:text-3xl font-bold text-white-50;
-                    transition: color 0.3s ease;
-                    
-                    &:hover {
-                        @apply text-white;
-                    }
-                }
-            }
-        }
-
-        .project-list-wrapper {
-            @apply flex md:flex-row flex-col xl:flex-col gap-6 xl:w-[42%];
-
-            .project {
-                @apply flex flex-col;
-            }
-
-            .image-wrapper {
-                @apply xl:h-[35vh] md:h-64 lg:h-72 h-72 relative rounded-2xl overflow-hidden border border-black-50;
-                transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-                will-change: transform, border-color, box-shadow;
-                padding: 1rem;
-                
-                @media (min-width: 640px) {
-                    padding: 1.5rem;
-                }
-                
-                @media (min-width: 1024px) {
-                    padding: 2rem;
-                }
-
-                &:hover {
-                    transform: translateY(-4px);
-                    border-color: rgba(255, 255, 255, 0.2);
-                    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-                }
-                
-                &:hover img {
-                    filter: brightness(0.3);
-                }
-            }
-            
-            .project-overlay {
-                @apply absolute inset-0 bg-black/80 opacity-0 transition-opacity duration-300 flex items-center justify-center p-4 rounded-2xl pointer-events-none;
-            }
-            
-            .image-wrapper:hover .project-overlay {
-                @apply opacity-100;
-            }
-            
-            .project-description {
-                @apply text-white text-sm md:text-base leading-relaxed text-center;
-                font-family: "Mona Sans", sans-serif;
-            }
-            
-            .video-play-overlay {
-                @apply absolute inset-0 flex items-center justify-center bg-black/60 cursor-pointer transition-opacity duration-300;
-                pointer-events: auto;
-                z-index: 10;
-                
-                p {
-                    @apply text-white text-lg md:text-xl font-semibold;
-                    font-family: "Mona Sans", sans-serif;
-                }
-            }
-            
-            .video-buttons-overlay {
-                @apply absolute inset-0 flex items-center justify-center gap-4 bg-black/70 transition-opacity duration-300;
-                pointer-events: auto;
-                z-index: 10;
-            }
-            
-            .image-wrapper video {
-                cursor: pointer;
-            }
-
-            img {
-                @apply w-full h-full object-contain rounded-xl;
+            video {
+                @apply w-full h-full object-cover rounded-2xl absolute inset-0;
                 transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
                 will-change: transform;
             }
 
-            .image-wrapper:hover img {
-                transform: scale(1.08);
+            &:hover video {
+                transform: scale(1.05);
             }
+        }
+
+        .project-card-media-link {
+            @apply relative w-full h-full block p-2 sm:p-3 lg:p-4;
+
+            img {
+                transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                will-change: transform;
+            }
+        }
+
+        .project-card-media:hover .project-card-media-link img {
+            transform: scale(1.05);
+            filter: brightness(0.4);
+        }
+
+        .project-card-body {
+            @apply space-y-2 mt-3;
 
             h2 {
-                @apply text-base md:text-lg lg:text-xl font-semibold mt-4 text-white-50;
+                @apply text-sm md:text-base font-bold text-white-50;
                 transition: color 0.3s ease;
-                
+
                 &:hover {
                     @apply text-white;
                 }
             }
+        }
+    }
+
+    .project-card-text {
+        @apply h-[171px] sm:h-[196px] md:h-[221px] p-4 md:p-6 flex flex-col justify-center gap-2;
+
+        h2 {
+            @apply text-sm md:text-base font-bold text-white-50;
+        }
+
+        p {
+            @apply text-white-50 text-xs md:text-sm leading-relaxed;
+        }
+    }
+
+    .project-overlay {
+        @apply absolute inset-0 bg-black/80 opacity-0 transition-opacity duration-300 flex items-center justify-center p-4 rounded-2xl pointer-events-none;
+    }
+
+    .project-card-media:hover .project-overlay {
+        @apply opacity-100;
+    }
+
+    .project-description {
+        @apply text-white text-xs md:text-sm leading-relaxed text-center;
+        font-family: "Lora", serif;
+    }
+
+    .projects-modal-backdrop {
+        @apply fixed inset-0 z-[200] flex items-start md:items-center justify-center bg-black/80 backdrop-blur-sm p-4 md:p-8 overflow-y-auto;
+    }
+
+    .projects-modal-panel {
+        @apply relative w-full max-w-5xl my-8 md:my-0 max-h-[85vh] overflow-y-auto bg-black-100 border border-black-50 rounded-2xl p-5 md:p-10;
+    }
+
+    .projects-modal-close {
+        @apply absolute top-4 right-4 md:top-6 md:right-6 text-white-50 hover:text-white transition-colors duration-300 z-10;
+
+        svg {
+            @apply size-6 md:size-7;
         }
     }
 
@@ -302,25 +313,27 @@ section {
     }
 
     .cta-button {
-        @apply px-4 py-4 rounded-lg bg-black-200 flex justify-center items-center relative cursor-pointer overflow-hidden;
+        @apply px-3.5 py-3.5 rounded-lg bg-black-200 flex justify-center items-center relative cursor-pointer overflow-hidden;
 
         .bg-circle {
             @apply absolute -right-10 origin-center top-1/2 -translate-y-1/2
-            w-[120%] h-[120%] group-hover:size-10 group-hover:right-10
+            w-[120%] h-[120%] group-hover:size-9 group-hover:right-9
             rounded-full bg-white-50 transition-all duration-500;
         }
 
         .text {
-            @apply uppercase md:text-lg text-black transition-all duration-500
+            @apply uppercase md:text-base text-black transition-all duration-500
             group-hover:text-white-50 group-hover:-translate-x-5 xl:translate-x-0 -translate-x-5;
+            font-family: "Georgia", serif;
+            font-style: italic;
         }
 
         .arrow-wrapper {
-            @apply group-hover:bg-white-50 size-10 rounded-full absolute right-10 top-1/2
+            @apply group-hover:bg-white-50 size-9 rounded-full absolute right-9 top-1/2
             -translate-y-1/2 flex justify-center items-center overflow-hidden;
 
             img {
-                @apply size-5 xl:-translate-y-32 translate-y-0 animate-bounce group-hover:translate-y-0 transition-all duration-500;
+                @apply size-4 xl:-translate-y-32 translate-y-0 animate-bounce group-hover:translate-y-0 transition-all duration-500;
             }
         }
     }
@@ -334,25 +347,81 @@ section {
     }
 
     .timeline-wrapper {
-        @apply absolute top-0 xl:left-[8vw] md:left-10 left-5 h-full flex justify-center;
+        @apply absolute top-0 left-[57px] md:left-[100px] h-full flex justify-center;
     }
 
     .timeline {
-        @apply absolute z-30 h-[110%] -top-10 w-14 md:w-28 bg-black;
+        @apply absolute z-30 h-[calc(100%+5rem)] -top-10 w-4 md:w-8 bg-black;
     }
 
     .timeline-logo {
-        @apply md:size-20 size-10 flex-none rounded-full flex justify-center items-center md:-translate-y-7 border border-black-50 bg-black-100;
+        @apply md:size-20 size-[45px] flex-none rounded-full flex justify-center items-center border border-black-50 bg-black-100 overflow-hidden;
+    }
+
+    .timeline-logo-fallback {
+        @apply w-full h-full flex items-center justify-center text-white-50 font-bold text-lg md:text-2xl bg-black-200;
+    }
+
+    .experience-modal-logo {
+        @apply size-16 md:size-20 flex-none rounded-2xl overflow-hidden flex justify-center items-center border border-black-50 bg-black-200;
+
+        img {
+            @apply w-full h-full object-contain p-2;
+        }
     }
 
     .exp-card-wrapper {
         @apply flex flex-col-reverse xl:flex-row xl:gap-20 gap-10 justify-between;
         overflow: visible;
     }
-    
+
     .expText {
         overflow: visible;
         word-wrap: break-word;
+    }
+
+    .exp-row {
+        @apply rounded-xl p-3 -m-3 transition-colors duration-300 cursor-pointer;
+
+        &:hover {
+            @apply bg-white/15;
+        }
+    }
+
+    .experience-modal-backdrop {
+        @apply fixed inset-0 z-[200] flex items-start md:items-center justify-center bg-black/80 backdrop-blur-sm p-4 md:p-8 overflow-y-auto;
+    }
+
+    .experience-modal-panel {
+        @apply relative w-full max-w-2xl my-8 md:my-0 max-h-[85vh] overflow-y-auto bg-black-100 border border-black-50 rounded-2xl p-6 md:p-10;
+    }
+
+    .experience-modal-close {
+        @apply absolute top-4 right-4 md:top-6 md:right-6 text-white-50 hover:text-white transition-colors duration-300 z-10;
+
+        svg {
+            @apply size-6 md:size-7;
+        }
+    }
+
+    .experience-modal-link {
+        @apply absolute top-4 right-16 md:top-6 md:right-20 flex items-center justify-center size-9 md:size-10 rounded-lg border border-black-50 bg-black-200 text-white-50 hover:text-white hover:border-white/20 transition-colors duration-300 z-10;
+
+        &.disabled {
+            @apply pointer-events-none opacity-40;
+        }
+
+        svg {
+            @apply size-4 md:size-5;
+        }
+    }
+
+    .exp-bullet-block {
+        @apply border-l-2 border-blue-50 bg-blue-100/40 rounded-md px-4 py-3 text-white-50 text-xs md:text-sm leading-relaxed;
+    }
+
+    .tech-tag {
+        @apply bg-black-200 border border-black-50 py-1.5 px-3.5 rounded-full text-xs md:text-sm text-white-50;
     }
 
     .gradient-edge {
@@ -364,19 +433,23 @@ section {
     }
 
     .tech-card-content {
-        @apply flex flex-col md:justify-center items-center xl:gap-3 xl:h-[50vh] overflow-hidden relative z-10 group-hover:cursor-grab;
+        @apply flex flex-col md:justify-center items-center xl:gap-3 xl:h-[44vh] overflow-hidden relative z-10 group-hover:cursor-grab;
 
         & p {
-            @apply text-lg 2xl:text-2xl pb-5 xl:pb-10 font-semibold text-white-50 text-center;
+            @apply text-base 2xl:text-xl pb-4 xl:pb-8 font-semibold text-white-50 text-center;
         }
     }
 
     .tech-grid {
-        @apply grid xl:grid-cols-5 md:grid-cols-3 grid-cols-1 xl:gap-16 md:gap-10 gap-5 mt-16;
+        @apply grid xl:grid-cols-5 md:grid-cols-3 grid-cols-1 xl:gap-20 md:gap-12 gap-6 mt-20;
+    }
+
+    .interests-grid {
+        @apply grid sm:grid-cols-3 grid-cols-1 xl:gap-20 md:gap-12 gap-6 mt-20 max-w-4xl mx-auto justify-items-center;
     }
 
     .tech-icon-wrapper {
-        @apply flex justify-center items-center w-40 md:w-52 h-48 md:h-60 relative;
+        @apply flex justify-center items-center w-36 md:w-44 h-40 md:h-52 relative;
     }
 
     form {
@@ -386,7 +459,7 @@ section {
 
         input,
         textarea {
-            @apply w-full px-4 py-4 md:text-base text-sm placeholder:text-blue-50 bg-blue-100 rounded-md;
+            @apply w-full px-3.5 py-3.5 md:text-sm text-xs placeholder:text-blue-50 bg-blue-100 rounded-md;
         }
 
         a {
@@ -399,7 +472,7 @@ section {
     }
 
     .section-divider {
-        @apply w-full flex justify-center py-8 md:py-12;
+        @apply w-full flex justify-center py-6 md:py-10;
     }
 
     .divider-line {
@@ -407,7 +480,7 @@ section {
     }
 
     .footer {
-        @apply my-10 md:mt-20 mt-10 text-white-50 px-5 md:px-20 xl:px-20 flex items-center justify-center;
+        @apply my-12 md:mt-28 mt-14 text-white-50 px-5 md:px-20 xl:px-20 flex items-center justify-center;
 
         .footer-container {
             @apply grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-0 w-full;
@@ -421,7 +494,7 @@ section {
             @apply flex items-center justify-center gap-5;
 
             .icon {
-                @apply border border-black-50 bg-black-100 flex justify-center items-center rounded-xl size-10 md:size-12 cursor-pointer transition-all duration-500 hover:bg-black-50;
+                @apply border border-black-50 bg-black-100 flex justify-center items-center rounded-xl size-9 md:size-11 cursor-pointer transition-all duration-500 hover:bg-black-50;
             }
 
             img {
@@ -433,18 +506,19 @@ section {
 
 /* Video button styles - outside nested structure for higher specificity */
 .video-play-button {
-    padding: 0.75rem 1.5rem !important;
+    padding: 0.45rem 0.95rem !important;
     background-color: rgb(126 34 206) !important;
     color: white !important;
-    font-weight: 600 !important;
+    font-weight: 700 !important;
     border-radius: 0.5rem !important;
     transition: all 0.3s ease !important;
     cursor: pointer !important;
-    font-family: "Mona Sans", sans-serif !important;
-    min-width: 44px !important;
-    min-height: 44px !important;
+    font-family: "Georgia", serif !important;
+    font-style: italic !important;
+    min-width: 31px !important;
+    min-height: 31px !important;
     border: none !important;
-    font-size: 1rem !important;
+    font-size: 0.72rem !important;
 }
 
 .video-play-button:hover {
@@ -458,22 +532,23 @@ section {
 }
 
 .video-visit-button {
-    padding: 0.75rem 1.5rem !important;
+    padding: 0.45rem 0.95rem !important;
     background-color: rgb(126 34 206) !important;
     color: white !important;
-    font-weight: 600 !important;
+    font-weight: 700 !important;
     border-radius: 0.5rem !important;
     transition: all 0.3s ease !important;
     cursor: pointer !important;
-    font-family: "Mona Sans", sans-serif !important;
-    min-width: 44px !important;
-    min-height: 44px !important;
+    font-family: "Georgia", serif !important;
+    font-style: italic !important;
+    min-width: 31px !important;
+    min-height: 31px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     text-decoration: none !important;
     border: none !important;
-    font-size: 1rem !important;
+    font-size: 0.72rem !important;
 }
 
 .video-visit-button:hover {
@@ -484,46 +559,6 @@ section {
 
 .video-visit-button:active {
     transform: scale(0.95) !important;
-}
-
-/* Hero text slider starts */
-.slide {
-    display: inline-block;
-    flex-direction: column;
-    transition: all cubic-bezier(0.71, 0.03, 0.34, 1);
-}
-
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    animation: wordSlider 21s infinite cubic-bezier(0.9, 0.01, 0.3, 0.99);
-}
-
-@keyframes wordSlider {
-    0% {
-        transform: translateY(0.5%);
-    }
-    12.5% {
-        transform: translateY(-12.5%);
-    }
-    25% {
-        transform: translateY(-25%);
-    }
-    37.5% {
-        transform: translateY(-37.5%);
-    }
-    50% {
-        transform: translateY(-50%);
-    }
-    62.5% {
-        transform: translateY(-62.5%);
-    }
-    75% {
-        transform: translateY(-75%);
-    }
-    87.5% {
-        transform: translateY(-87.5%);
-    }
 }
 
 /* Hero Text slider ends */

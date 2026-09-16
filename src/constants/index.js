@@ -8,8 +8,8 @@ const navLinks = [
     link: "#experience",
   },
   {
-    name: "Skills",
-    link: "#skills",
+    name: "Interests",
+    link: "#interests",
   },
   /*{
     name: "Testimonials",
@@ -17,21 +17,7 @@ const navLinks = [
   },*/
 ];
 
-const words = [
-  { text: "Ideas", imgPath: "/images/ideas.svg" },
-  { text: "Concepts", imgPath: "/images/concepts.svg" },
-  { text: "Designs", imgPath: "/images/designs.svg" },
-  { text: "Code", imgPath: "/images/code.svg" },
-  { text: "Ideas", imgPath: "/images/ideas.svg" },
-  { text: "Concepts", imgPath: "/images/concepts.svg" },
-  { text: "Designs", imgPath: "/images/designs.svg" },
-  { text: "Code", imgPath: "/images/code.svg" },
-];
-
-const counterItems = [
-  { value: 3, suffix: "rd Year", label: "student at University of Waterloo" },
-  { suffix: "My Resume", label: "Please click :)", link:"https://drive.google.com/file/d/1HFVyF3xeG9a3ehbXC_7iUgQU4Oj2X7Kz/view?usp=sharing" }
-];
+const resumeLink = "https://drive.google.com/file/d/18dZLGUkfOntp_3CDXL2crDwdKqXpLUJd/view?usp=sharing";
 
 const logoIconsList = [
   {
@@ -87,194 +73,224 @@ const abilities = [
   },
 ];
 
-const techStackImgs = [
+// Placeholder models reusing existing .glb files until real ones are downloaded.
+// To swap in real models: drop the .glb files into public/models/, then update
+// modelPath (and scale/rotation if the model looks too big/small/rotated) below.
+const personalInterests = [
   {
-    name: "React Developer",
-    imgPath: "/images/logos/react.png",
+    name: "Listening",
+    modelPath: "/models/sony_mdr-7506_headphones-transformed.glb",
+    scale: 22,
+    rotation: [0, 0, 0],
   },
   {
-    name: "Python Developer",
-    imgPath: "/images/logos/python.svg",
+    name: "Watching",
+    modelPath: "/models/tv__old_tv__retro_tv-transformed.glb",
+    scale: 1.6,
+    rotation: [0, -Math.PI / 2, 0],
+    position: [0, -3.63, 0.75],
   },
   {
-    name: "Backend Developer",
-    imgPath: "/images/logos/node.png",
-  },
-  {
-    name: "Interactive Developer",
-    imgPath: "/images/logos/three.png",
-  },
-  {
-    name: "Project Manager",
-    imgPath: "/images/logos/git.svg",
+    name: "Reading",
+    modelPath: "/models/book_stack-transformed.glb",
+    scale: 2.5,
+    rotation: [0, 0, 0],
   },
 ];
 
-const techStackIcons = [
+const showcaseProjects = [
   {
-    name: "React Developer",
-    modelPath: "/models/react_logo-transformed.glb",
-    scale: 1,
-    rotation: [0, 0, 0],
+    id: "creation",
+    title: "Creation: The Cursor for CAD",
+    media: { type: "video", src: "/videos/tire-finish-finish-video.mp4" },
+    titleLink: "https://creation.builders",
+    liveLink: "https://creation.builders",
   },
   {
-    name: "Python Developer",
-    modelPath: "/models/python-transformed.glb",
-    scale: 0.8,
-    rotation: [0, 0, 0],
+    id: "creation-text",
+    title: "Creation: The Cursor for CAD",
+    media: { type: "text" },
+    description:
+      "Creation is an AI-powered CAD agent that converts plain-language prompts into production-ready SolidWorks models in seconds, using a Python backend on AWS, a Claude API NLP pipeline, and a RAG pipeline over 1,000+ prior designs.",
   },
   {
-    name: "C/C++/C# Developer",
-    modelPath: "/models/c.glb",
-    scale: 0.08,
-    rotation: [0, 0, 0],
+    id: "pid",
+    title: "PID Controller: Auto-Balancer",
+    media: { type: "video", src: "/videos/PID_OMER_SAJID.mp4" },
   },
   {
-    name: "Interactive Developer",
-    modelPath: "/models/three.js-transformed.glb",
-    scale: 0.05,
-    rotation: [0, 0, 0],
+    id: "tradeguard",
+    title: "TradeGuard: Detect Insider Trading",
+    media: { type: "video", src: "/videos/tradeguard-finish-website-video.mp4" },
+    titleLink: "https://trade-guard-ten.vercel.app/",
+    liveLink: "https://trade-guard-ten.vercel.app/",
+    githubLink: "https://github.com/omer-18/TradeGuard",
   },
   {
-    name: "Project Manager",
-    modelPath: "/models/git-svg-transformed.glb",
-    scale: 0.05,
-    rotation: [0, -Math.PI / 4, 0],
+    id: "sim-robot",
+    title: "Simulated Navigation Robot",
+    media: { type: "image", src: "/images/wato.png", alt: "Simulated Navigation Robot" },
+    titleLink: "https://www.youtube.com/watch?v=bLf8vFsxAJ0&t=6s",
+    description:
+      "A ROS2 navigation system for differential-drive robots that uses path-planning algorithms and Pure Pursuit control to enable reliable autonomous navigation with precise trajectory tracking.",
+    githubDisabled: true,
+  },
+  {
+    id: "dataviz",
+    title: "DataViz Studio",
+    media: { type: "image", src: "/images/Dataviz.png", alt: "DataViz Studio" },
+    description:
+      "An interactive drag-and-drop data visualization tool that automatically creates charts from your data by intelligently detecting field types and suggesting the best visualizations.",
+    githubLink: "https://github.com/omer-18/datavisualization",
+  },
+  {
+    id: "toyota",
+    title: "Toyota Innovation Challenge",
+    media: {
+      type: "image-pair",
+      src: ["/images/toyota1.jpg", "/images/toyota2.jpg"],
+      alt: ["Toyota Challenge 1", "Toyota Challenge 2"],
+    },
+    titleLink: "https://drive.google.com/file/d/1TUBsWQnf_FG1uMiiiPaejTno2OFhLpOd/view?usp=sharing",
+    description:
+      "An autonomous navigation system for factory robots that uses computer vision to recognize stop signs and LIDAR sensors to avoid obstacles, enabling safe automated transportation of vehicle parts.",
+    githubLink: "https://github.com/jay-mango/Toyota_Challenge?tab=readme-ov-file",
+  },
+  {
+    id: "ai-sign-language",
+    title: "AI Sign Language to Speech Translator",
+    media: {
+      type: "image-pair",
+      src: ["/images/clif1.jpg", "/images/clif2.jpg"],
+      alt: ["CLIF Demo 1", "CLIF Demo 2"],
+    },
+    titleLink: "https://devpost.com/software/clif-cj1ql7",
+    description:
+      "A real-time sign language translator that converts ASL gestures into spoken text and speech using computer vision.",
+    githubLink: "https://github.com/omer-18/CLIF",
+  },
+  {
+    id: "edgebin",
+    title: "EDGEbin: Eco-Driven Garbage Evaluator",
+    media: { type: "image", src: "/images/edgebin2.png", alt: "EDGEbin" },
+    titleLink: "https://devpost.com/software/edgebin",
+    description:
+      "A AI-driven garbage sorting machine that uses computer vision to automatically classify and sort waste into different categories with high accuracy.",
+    githubLink: "https://github.com/omer-18/EDGEbin",
+  },
+  {
+    id: "amazon-replica",
+    title: "Amazon Interface Replica",
+    media: { type: "image", src: "/images/project2.png", alt: "Amazon Interface" },
+    description:
+      "A responsive Amazon-style e-commerce interface clone with a functional shopping cart system, built using vanilla JavaScript and CSS Grid for seamless desktop and mobile experiences.",
+    githubLink: "https://github.com/omer-18/Amazon-Interface-Clone",
   },
 ];
+
+const featuredProjectIds = ["creation", "pid", "tradeguard", "sim-robot"];
 
 const expCards = [
   {
-    review:
-"Omer's entrepreneurial vision and technical execution at Creation showcase exceptional full-stack capabilities. His ability to build production-ready AI systems from the ground up demonstrates strong product thinking and technical leadership.",
-    imgPath: "/images/exp5.png",
+    logoPath: "/images/randoxlogo.png",
+    company: "Randox Laboratories",
+    role: "Software Engineering Intern",
+    dateRange: "May 2026 – Aug 2026",
+    location: "Belfast, UK",
+    link: "https://www.randox.com/",
+    teaser: "Built an Uber-style Heathcare Courier Platform used in 200+ clinics across the UK.",
+    overview:
+      "Joining Randox Laboratories to build a full-stack courier coordination platform for a national healthcare network — a React Native app paired with a high-throughput dispatch API.",
+    bullets: [
+      "Built an Uber-style React Native platform for a national healthcare network, coordinating 200+ couriers across the UK",
+      "Developed a full-stack courier system with a Node.js/Express REST API handling 10,000+ daily requests alongside a 40+ screen React Native/TypeScript app",
+      "Modeled a normalized Azure SQL Server schema with indexed queries, achieving sub-200ms query response times",
+      "Designed a dispatch optimization algorithm auto-assigning jobs to the nearest driver by weighing GPS location, time-windows, and duty-time limits, cutting manual dispatch effort by 90%",
+    ],
+    techStack: ["React Native", "TypeScript", "Node.js", "Express.js", "Azure SQL"],
+  },
+  {
     logoPath: "/images/logo5.png",
-    title: "Co-Founder - Creation",
-    date: "October 2025 - Present | Toronto, ON, Canada",
-    responsibilities: [
-      "Developed a full-stack AI-powered Solidworks CAD agent that converts prompts into production-ready CAD files and technical drawings in seconds; launched a waitlist that garnered 300+ sign-ups",
-      "Built a typed Next.js + FastAPI stack with structured logging, async I/O, and schema-validated APIs, improving reliability, cutting p95 latency by 40%, and accelerating UI iteration 10×",
-      "Achieved 95%+ accuracy by composing Gemini 3.0 prompts with schemas and dual validation (Zod + Pydantic)",
-      "Designed a 3-entity DynamoDB table with partition/sort keys and secure S3 storage for reliable, versioned data"
+    company: "Creation",
+    role: "Founder",
+    dateRange: "October 2025 – Present",
+    location: "Toronto, ON, Canada",
+    link: "https://creation.builders",
+    teaser: "Cursor for CAD: AI-powered CAD agent turning prompts into production-ready CAD models.",
+    overview:
+      "Building an AI-powered CAD agent that turns plain-language prompts into production-ready SolidWorks models — from NLP interpretation through automated, manufacturable output.",
+    bullets: [
+      "Built a full-stack AI-powered SolidWorks CAD agent that converts prompts into production-ready CAD files in seconds using a Python backend on AWS; launched a waitlist of 300+ sign-ups",
+      "Developed an NLP pipeline with the Claude API to interpret raw design prompts and produce manufacturable CAD models via the SolidWorks API, powering 100+ automated designs",
+      "Implemented a RAG pipeline indexing 1,000+ PostgreSQL records to boost model accuracy, consistency, and response speed by retrieving prior successful outputs",
     ],
+    techStack: ["Python", "AWS", "Claude API", "SolidWorks API", "PostgreSQL"],
   },
   {
-    review:
-"Omer's embedded software engineering work demonstrates exceptional technical depth and cross-functional collaboration. His simulator development approach shows strong systems thinking and will significantly accelerate our product development cycle.",
-    imgPath: "/images/exp4.png",
     logoPath: "/images/logo4.png",
-    title: "Embedded Software Engineering Intern - WDI Wise Device Inc.",
-    date: "September 2025 - December 2025 | Toronto, ON, Canada",
-    responsibilities: [
-      "Engineered a simulator for an autofocus sensor replicating Image Capture → FPGA → Firmware → Linux → PID control, collaborating with firmware teams, cutting development and validation time by 80%",
-      "Developed Python models of FPGA image-processing stages to replicate hardware logic, replacing 9 of 10 tests",
-      "Developed a C++ diagnostic automation tool with TCP/IP socket communication to execute scripts on embedded Linux hardware, reducing field debugging time by 75%"
+    company: "WDI Wise Device Inc.",
+    role: "Embedded Software Engineering Intern",
+    dateRange: "September 2025 – December 2025",
+    location: "Toronto, ON, Canada",
+    link: "https://wdidevice.com/",
+    teaser: "Embedded Software Technology for Microscopes and Autofocus sensors.",
+    overview:
+      "Engineered a Python-based simulation platform for an embedded imaging pipeline, replacing hardware test benches with fast, repeatable software models.",
+    bullets: [
+      "Engineered a Python-based simulation platform with NumPy and modular design patterns, improving performance and reducing reliance on hardware testing by 85%",
+      "Implemented Python models of FPGA image-processing stages to replicate hardware logic, replacing 9 of 10 tests",
+      "Developed a C++ diagnostic automation tool with TCP/IP socket communication to execute scripts on embedded Linux hardware, reducing field debugging time by 75%",
     ],
+    techStack: ["Python", "NumPy", "FPGA", "C++", "TCP/IP", "Embedded Linux"],
   },
   {
-    review:
-"Omer approached his work with initiative and strong problem-solving instincts, helping shape an AI automation system from the ground up. His ability to work independently and adapt to challenges made a clear impact on the project's early progress.",
-    imgPath: "/images/exp1.png",
     logoPath: "/images/logo1.png",
-    title: "AI/ML Engineering Intern - ONIT Energy",
-    date: "January 2025 - April 2025 | Toronto, ON, Canada",
-    responsibilities: [
+    company: "ONIT Energy",
+    role: "AI/ML Engineering Intern",
+    dateRange: "January 2025 – April 2025",
+    location: "Toronto, ON, Canada",
+    link: "https://www.ontariowholesaleenergy.com/",
+    teaser: "Creating an AI outbound calling system to automate customer outreach.",
+    overview:
+      "Developed an AI-driven outbound calling system to automate customer outreach, integrating speech recognition, intent classification, and speech synthesis into one real-time pipeline.",
+    bullets: [
       "Developed an AI-driven outbound calling system integrating Whisper, BERT, DialoGPT, and Tacotron/WaveGlow into a real-time STT → NLP → TTS pipeline, cutting manual call handling from 500 calls/day to under 200",
       "Automated preprocessing for 3,000+ audio calls (transcription, MFCC extraction, diarization), reducing dataset preparation from 3 hours per batch to under 30 minutes and improving training throughput by 6×",
-      "Fine-tuned BERT model for 3-class intent recognition, boosting dialogue accuracy by 25% on test prompts"
+      "Fine-tuned BERT model for 3-class intent recognition, boosting dialogue accuracy by 25% on test prompts",
     ],
+    techStack: ["Whisper", "BERT", "DialoGPT", "Tacotron/WaveGlow"],
   },
   {
-    review:
-    "Omer’s engineering design work brought structure and clarity to our product development process. His CAD modeling and documentation reduced iteration cycles and streamlined onboarding",
-    imgPath: "/images/exp2.png",
     logoPath: "/images/logo2.png",
-    title: "Product Development Engineering Intern - Jacobsen Xray",
-    date: "June 2020 - December 2023 | Toronto, ON, Canada",
-    responsibilities: [
+    company: "Jacobsen Xray",
+    role: "Product Development Engineering Intern",
+    dateRange: "June 2020 – December 2023",
+    location: "Toronto, ON, Canada",
+    link: "https://www.jacobsenxray.com/",
+    teaser: "Researching Metallurgy Applications and working on Designing Patents in Solidworks",
+    overview:
+      "Supported product development for a scrubbing machine line, from CAD modeling through documentation used to onboard new operators.",
+    bullets: [
       "Designed 3D CAD models of a scrubbing machine in SolidWorks and AutoCAD, cutting iteration time by 40%",
-      "Helped develop a comprehensive machine operating manual, ensuring proper usage, reducing onboarding errors by 60%."
+      "Helped develop a comprehensive machine operating manual, ensuring proper usage, reducing onboarding errors by 60%.",
     ],
+    techStack: ["SolidWorks", "AutoCAD"],
   },
   {
-    review:
-    "Omer's work on our embedded flight systems played a key role in enabling real-time drone tracking. His deep understanding of hardware-software integration significantly improved our system's responsiveness and control accuracy",
-    imgPath: "/images/exp3.png",
     logoPath: "/images/logo3.png",
-    title: "Embedded Flight Software Project Manager - WARG",
-    date: "November 2023 - June 2025 | Waterloo, ON, Canada",
-    responsibilities: [
+    company: "WARG",
+    role: "Embedded Flight Software Project Manager",
+    dateRange: "November 2023 – June 2025",
+    location: "Waterloo, ON, Canada",
+    link: "https://www.uwarg.com/",
+    teaser: "Built a drone-tracking antenna pipeline with 95% tracking accuracy.",
+    overview:
+      "Led the embedded flight software team building a real-time tracking antenna system for autonomous drone telemetry.",
+    bullets: [
       "Developed the end-to-end tracking antenna pipeline (drone telemetry → UDP → ADC/SPI → MCU PWM → motor actuation), delivering 95% tracking accuracy and reducing alignment error to 5° in real-time trials",
       "Programmed the STM32/ESP32 to process ADC input and generate PWM outputs, supporting variable-speed motor actuation and ensuring stable antenna dynamics across 100+ field tests",
     ],
-  },
-];
-
-const expLogos = [
-  {
-    name: "logo5",
-    imgPath: "/images/logo5.png",
-  },
-  {
-    name: "logo4",
-    imgPath: "/images/logo4.png",
-  },
-  {
-    name: "logo1",
-    imgPath: "/images/logo1.png",
-  },
-  {
-    name: "logo2",
-    imgPath: "/images/logo2.png",
-  },
-  {
-    name: "logo3",
-    imgPath: "/images/logo3.png",
-  },
-];
-
-const testimonials = [
-  {
-    name: "Esther Howard",
-    mentions: "@estherhoward",
-    review:
-      "I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
-    imgPath: "/images/client1.png",
-  },
-  {
-    name: "Wade Warren",
-    mentions: "@wadewarren",
-    review:
-      "Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
-    imgPath: "/images/client3.png",
-  },
-  {
-    name: "Guy Hawkins",
-    mentions: "@guyhawkins",
-    review:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    imgPath: "/images/client2.png",
-  },
-  {
-    name: "Marvin McKinney",
-    mentions: "@marvinmckinney",
-    review:
-      "Adrian was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",
-    imgPath: "/images/client5.png",
-  },
-  {
-    name: "Floyd Miles",
-    mentions: "@floydmiles",
-    review:
-      "Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional!",
-    imgPath: "/images/client4.png",
-  },
-  {
-    name: "Albert Flores",
-    mentions: "@albertflores",
-    review:
-      "Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend dev are top-notch.",
-    imgPath: "/images/client6.png",
+    techStack: ["STM32", "ESP32", "UDP", "ADC/SPI", "PWM"],
   },
 ];
 
@@ -302,15 +318,13 @@ const socialImgs = [
 ];
 
 export {
-  words,
+  resumeLink,
   abilities,
   logoIconsList,
-  counterItems,
+  showcaseProjects,
+  featuredProjectIds,
   expCards,
-  expLogos,
-  testimonials,
   socialImgs,
-  techStackIcons,
-  techStackImgs,
+  personalInterests,
   navLinks,
 };
