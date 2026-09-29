@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Uncompressed source video (compressed version: public/videos/perception.mp4)
+public/videos/Perception HTN FINISHED.mp4

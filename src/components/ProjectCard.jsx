@@ -53,10 +53,11 @@ const ProjectCard = ({ project }) => {
           <video
             ref={videoRef}
             src={media.src}
+            poster={media.poster}
             loop
             muted
             playsInline
-            preload="auto"
+            preload={media.poster ? "none" : "auto"}
             onPlay={() => setPlaying(true)}
             onPause={() => setPlaying(false)}
           />

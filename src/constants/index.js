@@ -127,13 +127,11 @@ const showcaseProjects = [
     githubLink: "https://github.com/omer-18/TradeGuard",
   },
   {
-    id: "sim-robot",
-    title: "Simulated Navigation Robot",
-    media: { type: "image", src: "/images/wato.png", alt: "Simulated Navigation Robot" },
-    titleLink: "https://www.youtube.com/watch?v=bLf8vFsxAJ0&t=6s",
-    description:
-      "A ROS2 navigation system for differential-drive robots that uses path-planning algorithms and Pure Pursuit control to enable reliable autonomous navigation with precise trajectory tracking.",
-    githubDisabled: true,
+    id: "perception",
+    title: "Perception (HTN 2026)",
+    media: { type: "video", src: "/videos/perception.mp4", poster: "/images/Perception.jpg" },
+    titleLink: "https://devpost.com/software/perception-fha214",
+    liveLink: "https://devpost.com/software/perception-fha214",
   },
   {
     id: "dataviz",
@@ -179,16 +177,17 @@ const showcaseProjects = [
     githubLink: "https://github.com/omer-18/EDGEbin",
   },
   {
-    id: "amazon-replica",
-    title: "Amazon Interface Replica",
-    media: { type: "image", src: "/images/project2.png", alt: "Amazon Interface" },
+    id: "sim-robot",
+    title: "Simulated Navigation Robot",
+    media: { type: "image", src: "/images/wato.png", alt: "Simulated Navigation Robot" },
+    titleLink: "https://www.youtube.com/watch?v=bLf8vFsxAJ0&t=6s",
     description:
-      "A responsive Amazon-style e-commerce interface clone with a functional shopping cart system, built using vanilla JavaScript and CSS Grid for seamless desktop and mobile experiences.",
-    githubLink: "https://github.com/omer-18/Amazon-Interface-Clone",
+      "A ROS2 navigation system for differential-drive robots that uses path-planning algorithms and Pure Pursuit control to enable reliable autonomous navigation with precise trajectory tracking.",
+    githubDisabled: true,
   },
 ];
 
-const featuredProjectIds = ["creation", "pid", "tradeguard", "sim-robot"];
+const featuredProjectIds = ["creation", "pid", "tradeguard", "perception"];
 
 const expCards = [
   {
