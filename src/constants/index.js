@@ -17,7 +17,7 @@ const navLinks = [
   },*/
 ];
 
-const resumeLink = "https://drive.google.com/file/d/18dZLGUkfOntp_3CDXL2crDwdKqXpLUJd/view?usp=sharing";
+const resumeLink = "https://drive.google.com/file/d/1PnCwOoQkPcujwod4qymyjujTCpUL6Zff/view?usp=sharing";
 
 const logoIconsList = [
   {
